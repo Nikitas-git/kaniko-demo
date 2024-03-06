@@ -3,13 +3,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kaniko
+  name: kanikobattleships
 spec:
   containers:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
-    args: ["--context=git://github.com/Nikitas-git/kaniko-demo",
-            "--destination=nikitadockermain/devops-toolkit:1.0.0"]
+    args: ["--context=git://github.com/Nikitas-git/battleships.git",
+            "--destination=nikitadockermain/battleship_kaniko"]
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
